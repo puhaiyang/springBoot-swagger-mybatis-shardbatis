@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<shardingConfig>
+	<!-- parseList可选配置 如果配置了parseList,只有在parseList范围内并且不再ignoreList内的sql才会被解析和修改 -->
+	<parseList>
+		<value>com.zhushoumao.springboot.mapper.CityMapper.selectByPrimaryKey</value>
+	</parseList>
+
+	<!-- 配置分表策略 -->
+	<strategy tableName="city"	strategyClass="com.zhushoumao.springboot.utils.CityShardStrategyImpl" />
+</shardingConfig>  
