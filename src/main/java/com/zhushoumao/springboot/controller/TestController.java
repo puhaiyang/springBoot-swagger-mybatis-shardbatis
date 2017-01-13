@@ -60,9 +60,9 @@ public class TestController {
 	@ApiOperation(value = "获取城市列表测试", notes = "获取城市列表测试,主要测试分页插件")
 	@ApiImplicitParams({ @ApiImplicitParam(name = "page", value = "页号，默认为第1页", required = false, dataType = "Integer"),
 			@ApiImplicitParam(name = "rows", value = "每页记录书，默认为3条", required = false, dataType = "Integer") })
-	@RequestMapping(value = "rows", method = RequestMethod.GET)
-	public List<City> getCitys(@RequestParam(defaultValue = "1") Integer page,
-			@RequestParam(defaultValue = "3") Integer rows) {
+	@RequestMapping(value = "citys", method = RequestMethod.GET)
+	public List<City> getCitys(@RequestParam(value = "page", defaultValue = "1") Integer page,
+			@RequestParam(value = "rows", defaultValue = "3") Integer rows) {
 		List<City> list = cityService.getCitysByPage(rows, page);
 		return list;
 	}
